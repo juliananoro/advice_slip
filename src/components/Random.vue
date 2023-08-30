@@ -35,7 +35,7 @@ export default {
         color: white;
         height: 50px;
         width: 100%;
-        border-radius: 12px;
+        border-radius: 8px;
         font-family: 'Macondo', sans-serif;
         font-size: 20px;
     }

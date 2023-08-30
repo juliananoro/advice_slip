@@ -1,14 +1,15 @@
 <template>
-    <h2>Look for an advice:</h2>
-    <input type="text" :value="search"
+    <div id="search">
+       <input type="text" placeholder="Search for an advice..." :value="search"
         @input="search = $event.target.value" />
-    <button @click="getDataByQuery">Discover!</button>
+        <button @click="getDataByQuery">Discover!</button> 
+    </div>
     <div v-if="adviceByQuery.message">
         <p id="notice">{{adviceByQuery.message.text}}</p>
     </div>
-    <div v-else>
-        <p v-for="item in adviceByQuery.slips" :key="item.id">{{item.advice}}</p>
-    </div>
+    <ol v-else>
+        <li v-for="item in adviceByQuery.slips" :key="item.id">{{item.advice}}</li>
+    </ol>
 </template>
 
 <script>
@@ -33,5 +34,37 @@ export default {
 <style scoped>
     #notice {
         font-family: 'Poppins', sans-serif;
+    }
+
+    input {
+        height: 50px;
+        font-size: 20px;
+        font-family: 'Macondo', sans-serif;
+        border-radius: 8px;
+        text-align: center;
+        margin-right: 20px;
+    }
+
+    button {
+        background-color: #4b2f64;
+        color: white;
+        height: 50px;
+        width: 150px;
+        border-radius: 8px;
+        font-family: 'Macondo', sans-serif;
+        font-size: 20px;
+    }
+
+    button:hover {
+        transform: scale(102%) perspective(4px);
+    }
+
+    #search {
+        padding: 20px;
+    }
+
+    p, li {
+        padding: 10px;
+        font-size: 20px;
     }
 </style>

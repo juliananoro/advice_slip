@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input placeholder="Choose a number..." type="number" :value="slip_id"
+        <input placeholder="0" type="number" :value="slip_id"
             @input="slip_id = $event.target.value" />
         <button @click="getDataById">Choose</button>
         <p v-if="adviceById != null">{{adviceById.slip.advice}}</p>
@@ -36,13 +36,19 @@ export default {
             "p p p";
         grid-template-columns: 1fr 3fr;
     }
+     input {
+        width: 80%;
+        border-radius: 8px;
+        font-size: 20px;
+        text-align: center;
+     }
 
     button {
         background-color: #4b2f64;
         color: white;
         height: 50px;
         width: 100%;
-        border-radius: 12px;
+        border-radius: 8px;
         font-family: 'Macondo', sans-serif;
         font-size: 20px;
     }
@@ -57,7 +63,6 @@ export default {
     }
 
     #message {
-       font-family: 'Poppins', sans-serif;
-       font-size: ; 
+       font-family: 'Poppins', sans-serif; 
     }
 </style>
